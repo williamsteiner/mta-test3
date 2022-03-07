@@ -1,0 +1,115 @@
+_schema-version: "3.2"
+ID: mta-test3
+version: 0.0.1
+modules:
+- name: mta-test3-approuter
+  type: approuter.nodejs
+  path: mta-test3-approuter
+  requires:
+  - name: mta-test3_html_repo_runtime
+  - name: uaa_mta-test3
+  - name: mta-test3-dest-srv
+    group: destinations
+    properties:
+      forwardAuthToken: false
+      name: ui5
+      url: https://ui5.sap.com
+  - name: portal_resources_mta-test3
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: mta-test3_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: mta-test3_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - owicomtesthello3.zip
+      name: owicomtesthello3
+      target-path: resources/
+    - artifacts:
+      - comowiwebminwebrule3.zip
+      name: comowiwebminwebrule3
+      target-path: resources/
+- name: owicomtesthello3
+  type: html5
+  path: hello3
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: flp
+  type: com.sap.application.content
+  path: flp
+  requires:
+  - name: portal_resources_mta-test3
+    parameters:
+      content-target: true
+      service-key:
+        config:
+          content-endpoint: developer
+        name: content-deploy-key
+  - name: mta-test3_html_repo_host
+  - name: mta-test3_ui_deployer
+  - name: uaa_mta-test3
+- name: comowiwebminwebrule3
+  type: html5
+  path: webrule3
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: mta-test3_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: uaa_mta-test3
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: mta-test3-xsuaa-service
+    service-plan: application
+- name: mta-test3_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: mta-test3-dest-srv
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: false
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: mta-test3-dest-srv
+    service-plan: lite
+- name: portal_resources_mta-test3
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: portal
+    service-plan: standard
+parameters:
+  deploy_mode: html5-repo
