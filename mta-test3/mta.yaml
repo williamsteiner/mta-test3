@@ -7,6 +7,7 @@ modules:
   path: mta-test3-approuter
   requires:
   - name: mta-test3_html_repo_runtime
+  - name: conn_mta_mta-test3
   - name: uaa_mta-test3
   - name: mta-test3-dest-srv
     group: destinations
@@ -111,5 +112,10 @@ resources:
   parameters:
     service: portal
     service-plan: standard
+- name: conn_mta_mta-test3
+  parameters:
+    service-plan: lite
+    service: connectivity
+  type: org.cloudfoundry.managed-service    
 parameters:
   deploy_mode: html5-repo
