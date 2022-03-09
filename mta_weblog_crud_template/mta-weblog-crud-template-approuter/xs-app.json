@@ -1,0 +1,14 @@
+{
+  "authenticationMethod": "none",
+  "routes": [
+        
+    {
+        "source": "/owi_hana_ow/(.*)$",
+        "target": "$1",
+        "csrfProtection": false,
+        "destination": "owi_hana_ow",
+        "cacheControl": "public, max-age=432000,must-revalidate"
+    }
+    
+]
+}

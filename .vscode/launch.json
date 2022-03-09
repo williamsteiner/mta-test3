@@ -34,64 +34,28 @@
       }
     },
     {
-      "name": "Start weblog3",
+      "name": "weblog_crud_template",
+      "cwd": "${workspaceFolder}/mta-test3/weblog_crud_template",
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "npm",
-      "cwd": "${workspaceFolder}/weblog3",
-      "windows": {
-        "runtimeExecutable": "npm.cmd"
-      },
-      "runtimeArgs": [
-        "run-script",
-        "start"
+      "runtimeExecutable": "npx",
+      "args": [
+        "--open",
+        "test/flpSandbox.html?sap-ui-xx-viewCache=false#comowiwebminweblogcrudtemplate-display"
       ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "port": 9229,
-      "env": {
-        "DEBUG": "--inspect",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/weblog3\"}"
-      }
-    },
-    {
-      "name": "Start weblog3 Mock",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${workspaceFolder}/weblog3",
-      "runtimeExecutable": "npm",
       "windows": {
-        "runtimeExecutable": "npm.cmd"
+        "runtimeExecutable": "npx.cmd"
       },
-      "runtimeArgs": [
-        "run-script",
-        "start-mock"
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "port": 9229,
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/weblog3\"}"
-      }
-    },
-    {
-      "name": "Start weblog3 Local",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${workspaceFolder}/weblog3",
-      "runtimeExecutable": "npm",
-      "windows": {
-        "runtimeExecutable": "npm.cmd"
-      },
-      "runtimeArgs": [
-        "run-script",
-        "start-local"
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "port": 9229,
-      "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/weblog3\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/mta-test3/weblog_crud_template\"}",
+        "FIORI_TOOLS_UI5_VERSION": "",
+        "FIORI_TOOLS_UI5_URI": "https://ui5.sap.com"
       }
     }
   ]

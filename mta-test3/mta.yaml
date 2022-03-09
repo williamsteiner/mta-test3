@@ -37,9 +37,11 @@ modules:
       - comowiwebminwebrule3.zip
       name: comowiwebminwebrule3
       target-path: resources/
+    
+     
     - artifacts:
-      - comowiwebminweblog.zip
-      name: comowiwebminweblog
+      - comowiwebminweblogcrudtemplate.zip
+      name: comowiwebminweblogcrudtemplate
       target-path: resources/
 - name: owicomtesthello3
   type: html5
@@ -75,9 +77,11 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
-- name: comowiwebminweblog
+ 
+ 
+- name: comowiwebminweblogcrudtemplate
   type: html5
-  path: weblog
+  path: weblog_crud_template
   build-parameters:
     build-result: dist
     builder: custom
