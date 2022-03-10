@@ -1,0 +1,34 @@
+specVersion: "2.4"
+metadata:
+  name: com.owi.webmin.weblogCrud
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+          - path: /sap
+            url: http://owhana01-owd:8000
+            destination: owi_hana_ow
+          - path: /owi_hana_ow
+            pathPrefix: /
+            url: http://owhana01-owd:8000
+            destination: owi_hana_ow
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: com.owi.webmin.weblogCrud
+        ui5Theme: sap_fiori_3

@@ -1,5 +1,4 @@
 {
-    "version": "0.2.0",
     "configurations": [
         {
             "name": "Start hello3",
@@ -547,8 +546,85 @@
             "env": {
                 "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/mta-test3/weblog_crud_template\"}"
             }
+        },
+        {
+            "name": "Start weblogCrud",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "cwd": "${workspaceFolder}/mta_weblogCrud/weblogCrud",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "test/flpSandbox.html?sap-ui-xx-viewCache=false#WebLogMaint-display"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/mta-test3/mta_weblogCrud/weblogCrud\"}"
+            }
+        },
+        {
+            "name": "Start weblogCrud Mock",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/mta_weblogCrud/weblogCrud",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "test/flpSandboxMockServer.html?sap-ui-xx-viewCache=false#WebLogMaint-display"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/mta-test3/mta_weblogCrud/weblogCrud\"}"
+            }
+        },
+        {
+            "name": "Start weblogCrud Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/mta_weblogCrud/weblogCrud",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--config",
+                "./ui5-local.yaml",
+                "--open",
+                "test/flpSandbox.html?sap-ui-xx-viewCache=false#WebLogMaint-display"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/mta-test3/mta_weblogCrud/weblogCrud\"}"
+            }
         }
     ],
+    "compounds": [],
+    "version": "0.2.0",
     "inputs": [
         {
             "id": "UI5Version",

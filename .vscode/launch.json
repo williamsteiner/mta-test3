@@ -1,12 +1,4 @@
 {
-  "inputs": [
-    {
-      "id": "UI5Version",
-      "type": "command",
-      "command": "sap.ux.appGenerator.ui5Version"
-    }
-  ],
-  "version": "0.2.0",
   "configurations": [
     {
       "name": "webrule3",
@@ -34,8 +26,8 @@
       }
     },
     {
-      "name": "weblog_crud_template",
-      "cwd": "${workspaceFolder}/mta-test3/weblog_crud_template",
+      "name": "weblogCrud",
+      "cwd": "${workspaceFolder}/mta_weblogCrud/weblogCrud",
       "runtimeArgs": [
         "fiori",
         "run"
@@ -45,7 +37,7 @@
       "runtimeExecutable": "npx",
       "args": [
         "--open",
-        "test/flpSandbox.html?sap-ui-xx-viewCache=false#comowiwebminweblogcrudtemplate-display"
+        "test/flpSandbox.html?sap-ui-xx-viewCache=false#WebLogMaint-display"
       ],
       "windows": {
         "runtimeExecutable": "npx.cmd"
@@ -53,10 +45,11 @@
       "console": "internalConsole",
       "internalConsoleOptions": "openOnSessionStart",
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/mta-test3/weblog_crud_template\"}",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/mta_weblogCrud/weblogCrud\"}",
         "FIORI_TOOLS_UI5_VERSION": "",
         "FIORI_TOOLS_UI5_URI": "https://ui5.sap.com"
       }
     }
-  ]
+  ],
+  "version": "0.2.0"
 }

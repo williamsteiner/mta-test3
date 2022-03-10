@@ -35,9 +35,9 @@
 					"appId": "com.owi.webmin.webrule3",
 					"vizId": "webrule3_obj-webrule3_show"
 				}, {
-					"id": "com.owi.webmin.weblog_crud_template-2-1646853828823",
-					"appId": "com.owi.webmin.weblog_crud_template",
-					"vizId": "log_object-log_action"
+					"id": "com.owi.webmin.weblogcrudtemplate-2-1646930384616",
+					"appId": "com.owi.webmin.weblogcrudtemplate",
+					"vizId": "weblog_object-weblog_action"
 				}]
 			}
 		}, {
