@@ -34,22 +34,7 @@
 					"id": "com.owi.webmin.webrule3-1-1646433273154",
 					"appId": "com.owi.webmin.webrule3",
 					"vizId": "webrule3_obj-webrule3_show"
-				}, {
-					"id": "com.owi.webmin.weblogcrudtemplate-2-1646930384616",
-					"appId": "com.owi.webmin.weblogcrudtemplate",
-					"vizId": "weblog_object-weblog_action"
 				}]
-			}
-		}, {
-			"_version": "3.0.0",
-			"identification": {
-				"id": "new-group",
-				"title": "{{title}}",
-				"entityType": "group",
-				"i18n": "i18n/new-group.properties"
-			},
-			"payload": {
-				"viz": []
 			}
 		}],
 		"sites": [{
@@ -83,7 +68,7 @@
 						}
 					}
 				},
-				"groupsOrder": ["defaultGroupId", "new-group"],
+				"groupsOrder": ["defaultGroupId"],
 				"sap.cloud.portal": {
 					"config": {
 						"theme.id": "sap_fiori_3",

@@ -1,6 +1,6 @@
 _schema-version: "3.2"
 ID: mta-test3
-version: 0.0.1
+version: 0.0.3
 modules:
 - name: mta-test3-approuter
   type: approuter.nodejs
@@ -37,10 +37,7 @@ modules:
       - comowiwebminwebrule3.zip
       name: comowiwebminwebrule3
       target-path: resources/
-    - artifacts:
-      - comowiwebminweblogcrudtemplate.zip
-      name: comowiwebminweblogcrudtemplate
-      target-path: resources/
+    
 - name: owicomtesthello3
   type: html5
   path: hello3
@@ -75,16 +72,7 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
-- name: comowiwebminweblogcrudtemplate
-  type: html5
-  path: weblog_crud_template
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
+ 
 resources:
 - name: mta-test3_html_repo_runtime
   type: org.cloudfoundry.managed-service
