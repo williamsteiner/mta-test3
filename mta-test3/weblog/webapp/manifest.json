@@ -19,6 +19,21 @@
                 }
             }
         },
+        "crossNavigation": {
+            "inbounds": {
+                "com-owi-webmin-weblog-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "weblog_obj",
+                    "action": "weblog_action",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "icon": ""
+                }
+            }
+        },
         "sourceTemplate": {
             "id": "html5moduletemplates.2masterdetailcrudmodule",
             "version": "1.40.12"

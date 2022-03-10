@@ -28,3 +28,32 @@ example is weblog
 
 6) this does not auto add to the FLP config file
 
+7) missing ui5-deploy.yaml - copied from hello3 and renamed name and archiveName (this creates the zip file in resources)
+
+8) add nav to manifest - then see if you can add in FLP config
+
+    ,
+        "crossNavigation": {
+            "inbounds": {
+                "com-owi-webmin-weblog-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "weblog_obj",
+                    "action": "weblog_action",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "icon": ""
+                }
+            }
+        }
+
+9) now add i18n
+
+flpTitle=Web Log
+flpSubtitle=
+
+10) note i did change the package.json file when I got a npm error building - but turns out issue was the missing ui5-deploy.yaml
+
+

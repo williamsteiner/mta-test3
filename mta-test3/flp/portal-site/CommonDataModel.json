@@ -34,6 +34,10 @@
 					"id": "com.owi.webmin.webrule3-1-1646433273154",
 					"appId": "com.owi.webmin.webrule3",
 					"vizId": "webrule3_obj-webrule3_show"
+				}, {
+					"id": "com.owi.webmin.weblog-2-1646953213808",
+					"appId": "com.owi.webmin.weblog",
+					"vizId": "weblog_obj-weblog_action"
 				}]
 			}
 		}],
